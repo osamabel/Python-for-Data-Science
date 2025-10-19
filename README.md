@@ -42,3 +42,18 @@
 >> `f` - fixed-point notation (decimal format)
 >> ### Lesson:
 >> Understanding date/time manipulation is essential for data science tasks like time series analysis, data logging, and temporal data processing.
+
+
+### EX02 - Type Checking and Function Returns
+
+>> ### Key Concepts:
+>> - **Type introspection**: Using `type()` to identify object types at runtime
+>> - **Type names**: Accessing type names with `type().__name__`
+>> - **Function returns**: Functions can return values while performing side effects (printing)
+>> ### Python Techniques:
+>> - `type(object)` - Returns the type of an object
+>> - `type().__name__` - Gets the string name of the type
+>> - Conditional logic based on type checking
+>> - Return values in functions
+>> ### Lesson:
+>> Type checking is fundamental for data validation, error handling, and creating flexible functions that handle different data types appropriately.
