@@ -57,3 +57,24 @@
 >> - Return values in functions
 >> ### Lesson:
 >> Type checking is fundamental for data validation, error handling, and creating flexible functions that handle different data types appropriately.
+
+
+### EX03 - Detecting "Null-like" Values
+
+>> ### Key Concepts:
+>> - **Falsy values**: Different representations of "null" or "empty" in Python
+>> - **Type checking order**: Checking `bool` before `int` (since `False == 0` is `True`)
+>> - **NaN detection**: Using `math.isnan()` to identify Not-a-Number floats
+>> - **Return codes**: Using 0 for success, 1 for error
+>> ### Python "Null" Values:
+>> - `None` - The true null value
+>> - `float("NaN")` - Not a Number (mathematical undefined)
+>> - `0` - Zero integer
+>> - `""` - Empty string
+>> - `False` - Boolean false
+>> ### Important:
+>> - `False == 0` returns `True` in Python!
+>> - Always check `bool` type before `int` when both could be 0
+>> - Use `is None` not `== None` for identity check
+>> ### Lesson:
+>> Understanding Python's truthiness and falsy values is crucial for data validation, especially when cleaning datasets with missing or null values in data science.
