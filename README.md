@@ -98,3 +98,30 @@
 >> - Zero is considered even!
 >> ### Lesson:
 >> Command-line interface programming and input validation are essential skills for building robust scripts and tools in data science pipelines.
+
+
+### EX05 - Character Counting and String Analysis
+
+>> ### Key Concepts:
+>> - **String manipulation**: Iterating and analyzing character types in strings
+>> - **Character classification**: Using string methods to identify character types
+>> - **Interactive input**: Reading from stdin when no arguments provided
+>> - **Program structure**: Proper use of functions, main, and exception handling
+>> ### Python Techniques:
+>> - `string.punctuation` - Built-in punctuation characters
+>> - `.isupper()`, `.islower()`, `.isdigit()`, `.isspace()` - Character type checks
+>> - `sys.stdin.readline()` - Reading line by line from stdin
+>> - Function documentation with docstrings
+>> ### Best Practices:
+>> - No code in global scope (all code in functions)
+>> - Every program must have a `main()` function
+>> - Use `if __name__ == "__main__":` pattern
+>> - Catch all exceptions with try-except blocks
+>> - All functions must have documentation (__doc__)
+>> ### Accessing Documentation:
+>> - `function.__doc__` - Get docstring as string
+>> - `help(function)` - Show formatted help for function
+>> - `help(module)` - Show help for entire module
+>> - In IPython: `function?` shows docstring, `function??` shows source
+>> ### Lesson:
+>> Proper program structure, error handling, and string analysis are fundamental skills for data processing, text analysis, and building robust command-line tools in data science.
