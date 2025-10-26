@@ -1,7 +1,7 @@
 import math
 
 def NULL_not_found(object: any) -> int:
-    #your code here
+
     obj_type = type(object).__name__
     
     if object is None:

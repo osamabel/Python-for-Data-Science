@@ -78,3 +78,23 @@
 >> - Use `is None` not `== None` for identity check
 >> ### Lesson:
 >> Understanding Python's truthiness and falsy values is crucial for data validation, especially when cleaning datasets with missing or null values in data science.
+
+
+### EX04 - Command-Line Arguments and Input Validation
+
+>> ### Key Concepts:
+>> - **Command-line arguments**: Using `sys.argv` to handle CLI input
+>> - **Input validation**: Checking argument count and type
+>> - **Error handling**: Using try-except for graceful error messages
+>> - **Modulo operator**: Using `%` to check even/odd numbers
+>> ### Python Techniques:
+>> - `sys.argv` - List of command-line arguments
+>> - `len(sys.argv)` - Count arguments
+>> - `int()` conversion with error handling
+>> - `if __name__ == "__main__"` pattern
+>> ### Mathematical Concept:
+>> - Even number: `number % 2 == 0`
+>> - Odd number: `number % 2 != 0`
+>> - Zero is considered even!
+>> ### Lesson:
+>> Command-line interface programming and input validation are essential skills for building robust scripts and tools in data science pipelines.
