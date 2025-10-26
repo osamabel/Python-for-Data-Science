@@ -1,6 +1,6 @@
 import sys
 
-def main():
+def check_odd_or_even():
     # Check number of arguments
     if len(sys.argv) == 1:
         # No arguments provided, do nothing
@@ -23,5 +23,4 @@ def main():
     else:
         print("I'm Odd.")
 
-if __name__ == "__main__":
-    main()
+check_odd_or_even()
