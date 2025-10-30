@@ -125,3 +125,32 @@
 >> - In IPython: `function?` shows docstring, `function??` shows source
 >> ### Lesson:
 >> Proper program structure, error handling, and string analysis are fundamental skills for data processing, text analysis, and building robust command-line tools in data science.
+
+
+### EX06 - Filter Function and List Comprehensions
+
+>> ### Key Concepts:
+>> - **Functional programming**: Implementing higher-order functions
+>> - **List comprehensions**: Concise way to create and filter lists
+>> - **Lambda functions**: Anonymous functions for inline operations
+>> - **Filtering logic**: Selecting elements based on conditions
+>> ### Python Techniques:
+>> - List comprehension syntax: `[item for item in iterable if condition]`
+>> - Lambda functions: `lambda x: condition`
+>> - Built-in `filter()` function behavior
+>> - String operations: `.split()`, `len()`
+>> ### Iterators and Filter:
+>> - **Built-in `filter()`** returns an **iterator object**, not a list
+>> - **Iterator protocol**: Requires `__iter__()` and `__next__()` methods
+>> - `iter(filter_obj)` returns the iterator itself
+>> - `next(filter_obj)` yields the next filtered item or raises StopIteration
+>> - **Memory efficient**: Lazy evaluation - only computes when accessed
+>> - Convert to list: `list(filter(...))` to get all results at once
+>> ### Important:
+>> - List comprehensions are more Pythonic than loops
+>> - Lambdas are useful for simple, inline operations
+>> - Filter returns items where function returns True
+>> - If function is None, filter returns truthy items
+>> - Our `ft_filter` returns a list (eager), built-in returns iterator (lazy)
+>> ### Lesson:
+>> Understanding functional programming concepts like filtering and using list comprehensions makes data manipulation more efficient and readable in data science workflows.
