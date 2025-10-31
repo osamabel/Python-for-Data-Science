@@ -154,3 +154,29 @@
 >> - Our `ft_filter` returns a list (eager), built-in returns iterator (lazy)
 >> ### Lesson:
 >> Understanding functional programming concepts like filtering and using list comprehensions makes data manipulation more efficient and readable in data science workflows.
+
+
+### EX07 - Morse Code Encoding
+
+>> ### Key Concepts:
+>> - **Character encoding**: Converting text to a specific representation
+>> - **Dictionary mapping**: Using dictionaries for lookups and translations
+>> - **String transformation**: Case conversion and character mapping
+>> - **Input validation**: Checking for supported characters
+>> ### Python Techniques:
+>> - Dictionary lookups: `NESTED_MORSE[char]` for O(1) access
+>> - String methods: `.upper()` for case conversion
+>> - Dictionary as lookup table for encoding/decoding
+>> - Character-by-character iteration and transformation
+>> ### Morse Code Rules:
+>> - Letters A-Z and digits 0-9 are supported
+>> - Spaces are represented by "/"
+>> - Morse characters separated by single space
+>> - Dots (.) and dashes (-) represent characters
+>> ### Dictionary Benefits:
+>> - Fast O(1) lookup time
+>> - Clean, readable mapping
+>> - Easy to maintain and extend
+>> - No complex conditional logic needed
+>> ### Lesson:
+>> Using dictionaries for character mappings and encodings is an efficient pattern for text transformation, data preprocessing, and feature encoding in data science applications.
