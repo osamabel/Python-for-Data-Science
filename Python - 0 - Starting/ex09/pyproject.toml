@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ft_package"
+version = "0.0.1"
+authors = [
+    {name = "obelkhad", email = "obelkhad@student.1337.ma"}
+]
+description = "A sample test package"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+keywords = ["sample", "test", "package"]
+
+[project.urls]
+Homepage = "https://github.com/osamabel/ft_package"
+

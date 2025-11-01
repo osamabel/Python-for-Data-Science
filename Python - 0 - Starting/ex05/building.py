@@ -5,10 +5,10 @@ import string
 def count_characters(text: str) -> dict:
     """
     Count different types of characters in a text.
-    
+
     Args:
         text: The input string to analyze
-        
+
     Returns:
         A dictionary containing counts of uppercase, lowercase, punctuation,
         digits, and spaces
@@ -20,7 +20,7 @@ def count_characters(text: str) -> dict:
         'spaces': 0,
         'digits': 0
     }
-    
+
     for char in text:
         if char.isupper():
             counts['upper'] += 1
@@ -32,14 +32,14 @@ def count_characters(text: str) -> dict:
             counts['spaces'] += 1
         elif char.isdigit():
             counts['digits'] += 1
-    
+
     return counts
 
 
 def display_results(text: str, counts: dict) -> None:
     """
     Display the character count results.
-    
+
     Args:
         text: The original text
         counts: Dictionary with character counts
@@ -55,7 +55,7 @@ def display_results(text: str, counts: dict) -> None:
 def get_text_from_stdin() -> str:
     """
     Get text input from stdin (can handle multiple lines).
-    
+
     Returns:
         The input text as a string
     """
@@ -96,11 +96,11 @@ def main() -> None:
         else:
             # No argument provided, prompt for input
             text = get_text_from_stdin()
-        
+
         # Process and display results
         counts = count_characters(text)
         display_results(text, counts)
-        
+
     except Exception as e:
         print(f"An error occurred: {e}")
         return

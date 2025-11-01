@@ -1,57 +1,43 @@
 import sys
-
-
-def filter_string(sentence: str, n: int) -> list:
-    """
-    Filter words from a sentence that have length greater than N.
-    
-    Args:
-        sentence: Input string containing words separated by spaces
-        n: Minimum length threshold
-        
-    Returns:
-        List of words with length > n
-    """
-    # Split sentence into words
-    words = sentence.split()
-    
-    # Use lambda function to filter words by length
-    filter_func = lambda x: len(x) > n
-    
-    # Use list comprehension with lambda to filter words
-    result = [word for word in words if filter_func(word)]
-    
-    return result
+from ft_filter import ft_filter
 
 
 def main() -> None:
     """
     Main function that handles command-line arguments and filters words.
-    
+
+    Takes two command-line arguments:
+    - sentence: A string containing words separated by spaces
+    - n: An integer representing the minimum length threshold
+
+    Filters words from the sentence that have length greater than n
+    using ft_filter.
+
     Handles error cases:
     - Wrong number of arguments
-    - Wrong argument types
+    - Wrong argument types (n must be an integer)
     """
     try:
         # Check number of arguments
         if len(sys.argv) != 3:
             print("AssertionError: the arguments are bad")
             return
-        
+
         # Parse arguments
         sentence = sys.argv[1]
+        words = sentence.split()
         try:
             n = int(sys.argv[2])
         except ValueError:
             print("AssertionError: the arguments are bad")
             return
-        
-        # Filter words and print result
-        result = filter_string(sentence, n)
+
+        # Filter words with length greater than n using ft_filter
+        result = list(ft_filter(lambda word: len(word) > n, words))
         print(result)
-        
-    except Exception as e:
-        print(f"AssertionError: the arguments are bad")
+
+    except Exception:
+        print("AssertionError: the arguments are bad")
         return
 
 
