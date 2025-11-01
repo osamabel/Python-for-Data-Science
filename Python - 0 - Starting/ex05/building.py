@@ -35,6 +35,7 @@ def count_characters(text: str) -> dict:
 
     return counts
 
+
 def main() -> None:
     """
     Main function that handles command-line arguments and processes text.
@@ -58,7 +59,7 @@ def main() -> None:
 
         # Process and display results
         counts = count_characters(text)
-        
+
         print(f"The text contains {len(text)} characters:")
         print(f"{counts['upper']} upper letters")
         print(f"{counts['lower']} lower letters")
