@@ -20,8 +20,7 @@ def main() -> None:
     try:
         # Check number of arguments
         if len(sys.argv) != 3:
-            print("AssertionError: the arguments are bad")
-            return
+            raise AssertionError("the arguments are bad")
 
         # Parse arguments
         sentence = sys.argv[1]
@@ -29,16 +28,14 @@ def main() -> None:
         try:
             n = int(sys.argv[2])
         except ValueError:
-            print("AssertionError: the arguments are bad")
-            return
+            raise AssertionError("the arguments are bad")
 
         # Filter words with length greater than n using ft_filter
         result = list(ft_filter(lambda word: len(word) > n, words))
         print(result)
 
-    except Exception:
-        print("AssertionError: the arguments are bad")
-        return
+    except AssertionError as error:
+        print(AssertionError.__name__ + ":", error)
 
 
 if __name__ == "__main__":
