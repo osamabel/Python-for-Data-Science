@@ -180,3 +180,66 @@
 >> - No complex conditional logic needed
 >> ### Lesson:
 >> Using dictionaries for character mappings and encodings is an efficient pattern for text transformation, data preprocessing, and feature encoding in data science applications.
+
+
+### EX08 - Progress Bar with Yield
+
+>> ### Key Concepts:
+>> - **Generator functions**: Using `yield` to create iterators
+>> - **Progress visualization**: Real-time display of execution status
+>> - **Terminal interaction**: Dynamic output and terminal size detection
+>> - **Time calculations**: ETA, elapsed time, and speed computation
+>> ### Python Techniques:
+>> - `yield` operator - Creates generators and preserves state
+>> - `os.get_terminal_size()` - Gets terminal dimensions
+>> - `\r` carriage return - Overwrites same line for progress
+>> - `time.time()` - Calculate elapsed time and ETA
+>> ### Generator Behavior:
+>> - `yield` pauses function execution and returns value
+>> - Function state is preserved between calls
+>> - Each `yield` advances the iteration
+>> - More memory efficient than creating full lists
+>> ### Progress Bar Components:
+>> - Percentage complete: `100%`
+>> - Visual bar: `[====>    ]`
+>> - Counter: `333/333`
+>> - Time info: `[00:01<00:00, 191.61it/s]`
+>> ### Terminal Interaction:
+>> - `print(..., end='')` - Prevent newline
+>> - `\r` - Return cursor to start of line
+>> - Dynamic bar width based on terminal size
+>> - Overwrite same line for smooth progress
+>> ### Lesson:
+>> Understanding generators and yield is crucial for memory-efficient processing of large datasets, and progress bars enhance user experience in long-running data science operations.
+
+
+### EX09 - Python Package Creation
+
+>> ### Key Concepts:
+>> - **Package structure**: Creating installable Python packages
+>> - **Distribution formats**: Building `.tar.gz` and `.whl` wheel files
+>> - **Package metadata**: Version, author, license, dependencies
+>> - **Import system**: Making modules accessible via import
+>> ### Python Package Files:
+>> - `__init__.py` - Makes directory a Python package, exports functions
+>> - `setup.py` / `pyproject.toml` - Package metadata and configuration
+>> - `README.md` - Package documentation
+>> - `LICENSE` - Legal license (MIT, GPL, etc.)
+>> - `dist/` - Built distribution files
+>> ### Build Process:
+>> - `python -m build` - Creates tar.gz and wheel files
+>> - `.tar.gz` - Source distribution (traditional)
+>> - `.whl` - Built distribution (faster installs)
+>> - `pip install ./dist/*` - Install local package
+>> ### Package Metadata:
+>> - Name, version, description, author, license
+>> - Classifiers (License, Python version, OS compatibility)
+>> - Homepage URL, keywords, requirements
+>> - Readme content for PyPI
+>> ### Commands:
+>> - `pip list` - Show installed packages
+>> - `pip show -v <package>` - Display package metadata
+>> - `pip install ./dist/*.whl` - Install from wheel
+>> - `pip install ./dist/*.tar.gz` - Install from source
+>> ### Lesson:
+>> Creating installable packages is essential for distributing code, managing dependencies, and building reusable libraries for data science projects.
