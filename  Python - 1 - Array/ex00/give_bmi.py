@@ -4,6 +4,7 @@ import numpy as np
 def give_bmi(
         height: list[int | float],
         weight: list[int | float]) -> list[int | float]:
+    """Calculate BMI for each height/weight pair and return as a list."""
     try:
         if not isinstance(height, list) or not isinstance(weight, list):
             raise TypeError("Arguments must be lists")
@@ -26,6 +27,7 @@ def give_bmi(
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """Return True for each BMI value that exceeds the given limit."""
     try:
         if not isinstance(bmi, list):
             raise TypeError("bmi must be a list")
@@ -38,6 +40,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
 
 def main():
+    """Test give_bmi and apply_limit with sample data."""
     height = [2.71, 1.15]
     weight = [165.3, 38.4]
     bmi = give_bmi(height, weight)

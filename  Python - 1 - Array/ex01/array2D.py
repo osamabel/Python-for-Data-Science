@@ -1,6 +1,8 @@
 import numpy as np
 
+
 def slice_me(family: list, start: int, end: int) -> list:
+    """Print shape of 2D array then return a row-sliced version."""
     try:
         if not isinstance(family, list):
             raise TypeError("family must be a list")
@@ -18,6 +20,7 @@ def slice_me(family: list, start: int, end: int) -> list:
 
 
 def main():
+    """Test slice_me with the subject example."""
     family = [[1.80, 78.4],
               [2.15, 102.7],
               [2.10, 98.5],

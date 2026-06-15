@@ -16,8 +16,14 @@ def zoom_image(arr: np.ndarray) -> np.ndarray:
 
 
 def main():
+    """Load animal.jpeg, zoom into a region, and display it."""
     arr = ft_load("animal.jpeg")
+    print(arr)
+    if arr is None:
+        return
     zoomed = zoom_image(arr)
+    if zoomed is None:
+        return
     print(f"New shape after slicing: {zoomed.shape}")
     print(zoomed)
     plt.imshow(zoomed, cmap='gray')
