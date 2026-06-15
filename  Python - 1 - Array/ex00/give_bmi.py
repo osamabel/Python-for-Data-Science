@@ -10,13 +10,17 @@ def give_bmi(
         if len(height) != len(weight):
             raise ValueError("Lists must be the same size")
         for h, w in zip(height, weight):
-            if not isinstance(h, (int, float)) or not isinstance(w, (int, float)):
+            if not isinstance(h, (int, float)) \
+                    or not isinstance(w, (int, float)):
                 raise TypeError("List elements must be int or float")
             if h <= 0:
                 raise ValueError("Height must be strictly positive")
             if w <= 0:
                 raise ValueError("Weight must be strictly positive")
-        return [w / (h ** 2) for h, w in zip(height, weight)]
+        result = []
+        for h, w in zip(height, weight):
+            result.append(w / h ** 2)
+        return result
     except (TypeError, ValueError) as e:
         print(f"Error: {e}")
 
@@ -27,7 +31,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
             raise TypeError("bmi must be a list")
         if not isinstance(limit, int):
             raise TypeError("limit must be an int")
-        arr = np.array(bmi, dtype=float)
+        arr = np.array(bmi)
         return (arr > limit).tolist()
     except (TypeError, ValueError) as e:
         print(f"Error: {e}")

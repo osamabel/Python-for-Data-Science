@@ -10,9 +10,9 @@ def slice_me(family: list, start: int, end: int) -> list:
         if arr.ndim != 2:
             raise ValueError("family must be a 2D list (all rows same length)")
         print(f"My shape is : {arr.shape}")
-        sliced = arr[start:end]
-        print(f"My new shape is : {sliced.shape}")
-        return sliced.tolist()
+        arr = arr[start:end]
+        print(f"My new shape is : {arr.shape}")
+        return arr.tolist()
     except (TypeError, ValueError) as e:
         print(f"Error: {e}")
 

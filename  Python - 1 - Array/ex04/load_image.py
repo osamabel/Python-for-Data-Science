@@ -11,8 +11,6 @@ def ft_load(path: str) -> np.ndarray:
             raise ValueError("Only JPG/JPEG formats are supported")
         img = Image.open(path).convert('RGB')
         arr = np.array(img)
-        print(f"The shape of image is: {arr.shape}")
-        print(arr)
         return arr
     except (TypeError, ValueError, FileNotFoundError) as e:
         print(f"Error: {e}")

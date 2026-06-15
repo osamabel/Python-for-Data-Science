@@ -15,7 +15,7 @@ def zoom_image(arr: np.ndarray) -> np.ndarray:
         print(f"Error: {e}")
 
 
-def rotate(arr: np.ndarray) -> np.ndarray:
+def ft_rotate(arr: np.ndarray) -> np.ndarray:
     """Rotate a 2D array 90 degrees clockwise manually."""
     try:
         if not isinstance(arr, np.ndarray):
@@ -36,20 +36,13 @@ def rotate(arr: np.ndarray) -> np.ndarray:
 
 def main():
     arr = ft_load("animal.jpeg")
-    if arr is None:
-        return
     zoomed = zoom_image(arr)
-    if zoomed is None:
-        return
     print(f"The shape of image is: {zoomed.shape}")
     print(zoomed)
-    transposed = rotate(zoomed)
-    if transposed is None:
-        return
+    transposed = ft_rotate(zoomed)
     print(f"New shape after Transpose: {transposed.shape}")
     print(transposed)
     plt.imshow(transposed, cmap='gray')
-    plt.title("Transposed Image")
     plt.show()
 
 

@@ -14,7 +14,7 @@ def ft_load(path: str) -> np.ndarray:
         print(f"The shape of image is: {arr.shape}")
         print(arr)
         return arr
-    except (TypeError, ValueError, FileNotFoundError) as e:
+    except (TypeError, ValueError) as e:
         print(f"Error: {e}")
 
 

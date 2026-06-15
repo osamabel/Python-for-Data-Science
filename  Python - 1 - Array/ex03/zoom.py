@@ -21,7 +21,6 @@ def main():
     print(f"New shape after slicing: {zoomed.shape}")
     print(zoomed)
     plt.imshow(zoomed, cmap='gray')
-    plt.title("Zoomed Image")
     plt.show()
 
 

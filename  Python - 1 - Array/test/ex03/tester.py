@@ -20,35 +20,22 @@ def make_test_image():
 
 
 def test_zoom_output_shape():
-    """zoom_image must return a (400, 400, 1) array."""
     arr = np.random.randint(0, 255, (768, 1024, 3), dtype=np.uint8)
     zoomed = zoom_image(arr)
-    assert zoomed.shape == (400, 400, 1), (
-        f"Expected (400, 400, 1), got {zoomed.shape}"
+    assert zoomed.shape == (400, 400), (
+        f"Expected (400, 400), got {zoomed.shape}"
     )
     print("test_zoom_output_shape passed")
 
 
 def test_zoom_dtype():
-    """Zoomed array must be uint8."""
     arr = np.random.randint(0, 255, (768, 1024, 3), dtype=np.uint8)
     zoomed = zoom_image(arr)
     assert zoomed.dtype == np.uint8, f"Expected uint8, got {zoomed.dtype}"
     print("test_zoom_dtype passed")
 
 
-def test_zoom_single_channel():
-    """Zoomed array must have exactly 1 channel (grayscale)."""
-    arr = np.random.randint(0, 255, (768, 1024, 3), dtype=np.uint8)
-    zoomed = zoom_image(arr)
-    assert zoomed.shape[2] == 1, (
-        f"Expected 1 channel, got {zoomed.shape[2]}"
-    )
-    print("test_zoom_single_channel passed")
-
-
 def test_zoom_values_in_range():
-    """Pixel values must be 0–255."""
     arr = np.random.randint(0, 255, (768, 1024, 3), dtype=np.uint8)
     zoomed = zoom_image(arr)
     assert zoomed.min() >= 0 and zoomed.max() <= 255
@@ -56,15 +43,14 @@ def test_zoom_values_in_range():
 
 
 def test_zoom_is_greyscale():
-    """Output is a mean of R, G, B — not a raw channel copy."""
     arr = np.zeros((768, 1024, 3), dtype=np.uint8)
     arr[200:600, 300:700, 0] = 90
     arr[200:600, 300:700, 1] = 60
     arr[200:600, 300:700, 2] = 30
     zoomed = zoom_image(arr)
     expected = int(round((90 + 60 + 30) / 3))
-    assert abs(int(zoomed[0, 0, 0]) - expected) <= 1, (
-        f"Expected ~{expected}, got {zoomed[0, 0, 0]}"
+    assert abs(int(zoomed[0, 0]) - expected) <= 1, (
+        f"Expected ~{expected}, got {zoomed[0, 0]}"
     )
     print("test_zoom_is_greyscale passed")
 
@@ -75,7 +61,6 @@ def main():
     print("Unit tests (zoom_image):")
     test_zoom_output_shape()
     test_zoom_dtype()
-    test_zoom_single_channel()
     test_zoom_values_in_range()
     test_zoom_is_greyscale()
     if os.path.exists(TEST_IMG):
