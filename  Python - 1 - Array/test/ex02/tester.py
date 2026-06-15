@@ -45,34 +45,21 @@ def test_dtype_uint8():
 
 
 def test_error_wrong_extension():
-    """Non-JPG path raises ValueError."""
-    try:
-        ft_load("image.png")
-        print("FAIL: expected ValueError")
-    except ValueError as e:
-        print(f"test_error_wrong_extension passed: {e}")
-    except Exception as e:
-        print(f"FAIL: unexpected exception: {e}")
+    result = ft_load("image.png")
+    assert result is None, f"Expected None, got {result}"
+    print("test_error_wrong_extension passed")
 
 
 def test_error_not_a_string():
-    """Non-string path raises TypeError."""
-    try:
-        ft_load(123)
-        print("FAIL: expected TypeError")
-    except TypeError as e:
-        print(f"test_error_not_a_string passed: {e}")
-    except Exception as e:
-        print(f"FAIL: unexpected exception: {e}")
+    result = ft_load(123)
+    assert result is None, f"Expected None, got {result}"
+    print("test_error_not_a_string passed")
 
 
 def test_error_file_not_found():
-    """Missing file raises an exception with a clear message."""
-    try:
-        ft_load("does_not_exist.jpg")
-        print("FAIL: expected exception")
-    except Exception as e:
-        print(f"test_error_file_not_found passed: {e}")
+    result = ft_load("does_not_exist.jpg")
+    assert result is None, f"Expected None, got {result}"
+    print("test_error_file_not_found passed")
 
 
 def main():
